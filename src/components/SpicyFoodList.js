@@ -4,7 +4,8 @@ import { spicyFoods, getNewRandomSpicyFood } from "../data";
 function SpicyFoodList() {
   const [foods, setFoods] = useState(spicyFoods);
 
-  function handleAddFood() {
+  function handleAddFood(event) {
+    setFoods(event.target.value);
     const newFood = getNewRandomSpicyFood();
     console.log(newFood);
   }
@@ -14,6 +15,8 @@ function SpicyFoodList() {
       {food.name} | Heat: {food.heatLevel} | Cuisine: {food.cuisine}
     </li>
   ));
+
+  
 
   return (
     <div>
